@@ -8,11 +8,12 @@ import Button from './modules/atoms/Button/components';
 import RoundedImage from './modules/atoms/Image/components/RoundedImage';
 import Flex from './modules/Layout/components/Flex';
 import Column from './modules/Layout/components/Column';
+import Image from './modules/atoms/Image/components';
 
 function App() {
 
   const initialValues = {
-    name: '',
+    name: 'Keshav',
     phone: ''
   }
 
@@ -38,6 +39,7 @@ function App() {
       name='Lead Form'       
       className='mx-5 mt-3'
       validateOnSubmit={true}
+      validateOnChange={true}
       initialValues={initialValues}
       validationSchema={formSchema}
       submitHandler={submitHandler}
@@ -52,8 +54,9 @@ function App() {
         <Form.Feedback name='phone' />
       </Form.Group>
 
-      <Button type="submit" variant='practoBlue' className='mt-4'>Book Now</Button>
+      <Button type="submit" variant='primary' size='block' className='mt-4'>Book Now</Button>
     </Form>
+
 
     <Flex gap={4}>
       <Column width={3}>
@@ -65,11 +68,21 @@ function App() {
       />
       </Column>
 
-      <Column width={9}>
+      <Column width={6}>
         <p>Highly recommended by patients for explanation of treatment</p>
       </Column>
+
     </Flex>
- 
+
+    <Button variant='white' size='sm' className='ml-3 mt-3'>
+        <Image 
+          src='https://www-latest.practo.com/sapphire-assets/images/ic_call.324d17022c13.png' 
+          width={12} 
+          height={12} 
+          className='mr-2'
+        />
+        08047092211
+      </Button>
     </>
   );
 }

@@ -1,0 +1,12 @@
+.button-sm {
+  padding: 12px 8px;
+}
+
+.button-lg {
+  padding: 16px;
+}
+
+.button-block {
+  padding: 16px;
+  width: 100%;
+}

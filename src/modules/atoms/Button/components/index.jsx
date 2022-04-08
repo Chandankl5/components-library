@@ -1,17 +1,23 @@
 import cn from 'classnames'
 import React from 'react'
 
+import './Button.css'
+
 export default function Button({
   type= 'button',
   variant = '',
+  size = 'sm',
   className = '',
   disabled = false,
   ...props
 }) {
 
-  const classNames = cn(['w-full', 'rounded-lg', 'p-4'],{
+  const textColor = variant === 'white' ? 'black' : 'white';
+
+  const classNames = cn(['rounded-lg'],{
     [`bg-${variant}`]: true,
     [`border-${variant}`]: true,
+    [`button-${size}`]: true,
     [className]: true,
   })
 
@@ -20,7 +26,7 @@ export default function Button({
       className={classNames}
       type={type}
       disabled={disabled}
-      style={{color: 'white'}}
+      style={{color: textColor}}
     >
       {props.children}
     </button>
